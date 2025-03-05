@@ -4,7 +4,7 @@ SELECTED_THEME="$(tmux show-option -gv @tokyo-night-tmux_theme)"
 TRANSPARENT_THEME="$(tmux show-option -gv @tokyo-night-tmux_transparent)"
 
 case $SELECTED_THEME in
-"storm")
+"tokyo-night-storm")
   declare -A THEME=(
     ["background"]="#24283b"
     ["foreground"]="#a9b1d6"
@@ -28,7 +28,7 @@ case $SELECTED_THEME in
   )
   ;;
 
-"day")
+"tokyo-night-day")
   declare -A THEME=(
     ["background"]="#d5d6db"
     ["foreground"]="#343b58"
@@ -52,8 +52,7 @@ case $SELECTED_THEME in
   )
   ;;
 
-*)
-  # Default to night theme
+"tokyo-night-night")
   declare -A THEME=(
     ["background"]="#1A1B26"
     ["foreground"]="#a9b1d6"
@@ -76,6 +75,31 @@ case $SELECTED_THEME in
     ["byellow"]="#e0af68"
   )
   ;;
+
+*) # Default to neonsign theme
+  declare -A THEME=(
+    ["background"]="#101010"
+    ["foreground"]="#f0f0f0"
+    ["black"]="#181818"
+    ["blue"]="#198CFF"
+    ["cyan"]="#00D9FF"
+    ["green"]="#2EFF47"
+    ["magenta"]="#8A2BE2"
+    ["red"]="#ff3355"
+    ["white"]="#f0f0f0"
+    ["yellow"]="#FFD300"
+
+    ["bblack"]="#32363e"
+    ["bblue"]="#4FA6FF"
+    ["bcyan"]="#30F7FF"
+    ["bgreen"]="#5eff8a"
+    ["bmagenta"]="#B44CFF"
+    ["bred"]="#FF4488"
+    ["bwhite"]="#ffffff"
+    ["byellow"]="#FFE04A"
+  )
+  ;;
+
 esac
 
 # Override background with "default" if transparent theme is enabled
